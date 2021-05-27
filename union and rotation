@@ -1,0 +1,61 @@
+
+void unionAndIntersection(int arr1 , int arr2 )
+{
+  int n1 = sizeof(arr1);
+  int n2 = sizeof(arr2);
+  int *union= new int(n1+n2);
+  
+  for(int i=0; i<n1;i++)
+  {
+  
+    u[i]=arr1[i];
+  
+  }
+  for(int i=0 ;i<n2;i++)
+  {
+    u[i+n1] = arr2[i];
+  
+  }
+  sort(union , union+n1+n2);
+  cout<<"union"<<endl;
+  for(int i=0;i<n1+n2;i++)
+  {
+    if(u[i]!=u[i+1])
+    {
+     cout<<u[i]<<" ";
+    }
+    
+  
+  }
+   cout<< "intersection"<<endl;
+   for(int i=0;i<n1+n2;i++)
+  {
+    if(u[i]==u[i+1])
+    {
+     cout<<u[i]<<" ";
+    }
+    
+  
+  }
+ }
+ 
+ 
+ 
+ 
+ 
+//rotation
+
+void rotate(int arr[], int n , int d)
+{  
+  for(int j=0 ; j<d;j++)
+  {
+    int temp= arr[n-1];    
+    for(int i=n-1;i>=0;i--)
+        {  arr[i]=arr[i-1];}
+        arr[0]=temp;  
+      
+  }  
+      
+      
+  
+}
